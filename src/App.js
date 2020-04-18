@@ -13,6 +13,7 @@ export default function App() {
 
   // parse definitions from api response
   const parseJSON = json => {
+    console.log('response', json)
     const definitions = []
     if (json.results) {
       json.results[0].lexicalEntries.forEach(le => {
@@ -41,6 +42,7 @@ export default function App() {
       const response = await fetch(url, { headers })
         .then((resp) => resp.json())
         .catch(err => console.log('fetch request error:' + err))
+      console.log(response)
       try {
         const definitions = parseJSON(response)
         // update UI
