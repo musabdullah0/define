@@ -13,7 +13,6 @@ export default function App() {
 
   // parse definitions from api response
   const parseJSON = json => {
-    console.log('response', json)
     const definitions = []
     if (json.results) {
       json.results[0].lexicalEntries.forEach(le => {
@@ -30,7 +29,6 @@ export default function App() {
   const getDefinition = useCallback(
     async () => {
       setLoading(true)
-      console.log('getting definition for ' + word)
       const prefix = 'https://stark-hollows-46944.herokuapp.com/'
       const api = `https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${word}?fields=definitions`
       const url = prefix + api
@@ -42,7 +40,6 @@ export default function App() {
       const response = await fetch(url, { headers })
         .then((resp) => resp.json())
         .catch(err => console.log('fetch request error:' + err))
-      console.log(response)
       try {
         const definitions = parseJSON(response)
         // update UI

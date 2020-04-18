@@ -2,7 +2,10 @@
 This React app gets definitions for a word using the Oxford Dictionary API. 
 
 ## how to run code
-
+The app is hosted by heroku at [here](https://nameless-brushlands-25087.herokuapp.com/). If you want to run the app locally then
+1. clone this repository
+2. cd to the define folder
+3. run `npm start`
 
 ## issues
 
