@@ -1,6 +1,9 @@
 # managerly application app
 This React app gets definitions for a word using the Oxford Dictionary API. 
 
+## how to run code
+
+
 ## issues
 
 This API does not allow my front end to directly access it and sends a `Access-Control-Allow-Origin` header in its response if I attempt to, most likely for security reasons. I bypassed this by setting up a NodeJS [CORS-proxy]('https://stark-hollows-46944.herokuapp.com/') which adds CORS headers to the proxied request.
